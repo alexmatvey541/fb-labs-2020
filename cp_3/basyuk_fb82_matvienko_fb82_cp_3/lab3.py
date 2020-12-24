@@ -5,7 +5,7 @@ output = open("output.txt", 'w', encoding = "utf-8")
 russian = "абвгдежзийклмнопрстуфхцчшщьыэюя"
 cipher = file.read().replace('\n', '')
 
-def bezout(a, mod):
+def bezout(a, mod):    ------ функція розширеного алгоритму евкліда
     '''ітераційний алгоритм евкліда'''
     x, xx, y, yy = 1, 0, 0, 1
     while mod:
@@ -14,7 +14,7 @@ def bezout(a, mod):
         x, xx = xx, x - xx*q
         y, yy = yy, y - yy*q
     return x, y, a
-def Decryption(key, numbers, bigrams):
+def Decryption(key, numbers, bigrams): -------------функція розшифрування 
     global russian
     decryptedtext = ''
     lengthalphabet = len(russian)
@@ -27,7 +27,7 @@ def GCD (x,y):
     while (y):
         x, y = y, x % y
     return x
-def equation(X,Y,mod):
+def equation(X,Y,mod):------------------ пошуку ключа А (В функції equation я використовую функцію gcd i bezout для пошуку ключа)
     gcd = GCD(X,mod)
     a = -1
     if gcd == 1 or GCD(Y,gcd)==gcd:
